@@ -11,7 +11,19 @@ import com.lgy.componentbase.service.IAccountService;
 public class ServiceFactory {
     private IAccountService accountService;
 
+    /**
+     * 构造器为 private 禁止构造 ServiceFactory 对象
+     */
     private ServiceFactory() {
+    }
+
+    /**
+     * 通过内部类获得单例
+     *
+     * @return
+     */
+    public static ServiceFactory getInstance() {
+        return Inner.serviceFactory;
     }
 
     private static class Inner {
@@ -30,6 +42,7 @@ public class ServiceFactory {
 
     /**
      * 返回 Login 组件的 Service 实现
+     *
      * @return
      */
     public IAccountService getAccountService() {

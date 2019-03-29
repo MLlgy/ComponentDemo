@@ -2,6 +2,7 @@ package com.lgy.componentdemo;
 
 import android.app.Application;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.lgy.base.AppConfig;
 import com.lgy.base.BaseApplication;
 
@@ -14,6 +15,11 @@ public class HostApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        if (isDebug()) {
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(this);
         initMoudleApp(this);
         initModuleData(this);
     }
@@ -56,5 +62,9 @@ public class HostApplication extends BaseApplication {
                 e.printStackTrace();
             }
         }
+    }
+
+    private boolean isDebug() {
+        return BuildConfig.DEBUG;
     }
 }

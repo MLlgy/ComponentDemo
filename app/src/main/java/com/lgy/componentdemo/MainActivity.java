@@ -1,5 +1,6 @@
 package com.lgy.componentdemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,11 +15,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void login(View view){
+    public void login(View view) {
         ARouter.getInstance().build("/account/login").navigation();
     }
 
-    public void share(View view){
-        ARouter.getInstance().build("/share/share").withString("share_content","分享到新浪微博").navigation();
+    public void share(View view) {
+        ARouter.getInstance().build("/share/share").withString("share_content", "分享到新浪微博").navigation();
+    }
+
+    public void fragment(View view) {
+        startActivity(new Intent(this, FragmentActivity.class));
     }
 }

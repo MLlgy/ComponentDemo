@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">login</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="login_app_name">login</string>
+    <string name="login_title_activity_main">MainActivity</string>
 </resources>

@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import com.lgy.componentbase.ServiceFactory;
 
+/**
+ * 通过　Ｓｅｒｖｉｃｅ　获得组件中的　Ｆｒａｇｍｅｎｔ，但是需要一个　Activity 为容器，这里的容器　Activity　为　FragmentActivity
+ */
 public class FragmentActivity extends AppCompatActivity {
 
     @Override

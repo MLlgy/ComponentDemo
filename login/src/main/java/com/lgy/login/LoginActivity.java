@@ -21,9 +21,6 @@ public class LoginActivity extends AppCompatActivity {
         updateLoginState();
     }
 
-    private void updateLoginState() {
-        tvStatus.setText("这里是登录页面,当前状态为：" + (AccountUtils.userInfo == null ? "未登录" : AccountUtils.userInfo.getName()));
-    }
 
     private void initView() {
         tvStatus = findViewById(R.id.tv_status);
@@ -31,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
         AccountUtils.userInfo = new UserInfo("10086", "admin");
+        updateLoginState();
     }
 
     public void loginShare(View view) {
@@ -41,5 +39,10 @@ public class LoginActivity extends AppCompatActivity {
     public void exit(View view) {
         AccountUtils.userInfo = null;
         updateLoginState();
+    }
+
+
+    private void updateLoginState() {
+        tvStatus.setText("这里是登录页面,当前状态为：" + (AccountUtils.userInfo == null ? "未登录" : AccountUtils.userInfo.getName()));
     }
 }

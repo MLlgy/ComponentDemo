@@ -15,12 +15,12 @@ import com.lgy.componentbase.service.IAccountService;
 public class AccountService implements IAccountService {
     @Override
     public boolean isLogin() {
-        return false;
+        return AccountUtils.userInfo != null;
     }
 
     @Override
     public String getAccountId() {
-        return null;
+        return AccountUtils.userInfo.getAccountId();
     }
 
     @Override

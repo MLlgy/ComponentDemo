@@ -4,12 +4,19 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.lgy.componentdemo"
-        minSdkVersion 26
+        minSdkVersion 25
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -20,9 +27,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // runtimeOnly　代码隔离
     runtimeOnly project(':login')
     runtimeOnly project(':share')
     implementation project(':base')
-
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

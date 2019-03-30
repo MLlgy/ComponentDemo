@@ -11,7 +11,7 @@ import com.lgy.componentbase.ServiceFactory;
 /**
  * Author：lee
  * Data: 19-3-30 11:20
- * 自定义的过滤器需要通过 @Tnterceptor 来注解，priority 是优先级，name 是对这个拦截器的描述。
+ * 自定义的过滤器需要通过 @Interceptor 来注解，priority 是优先级，name 是对这个拦截器的描述。
  * 以上代码中通过 Postcard 获取跳转的 path，然后通过 path 以及特定的需求来判断是否拦截，
  * 在这里是通过对登录状态的判断进行拦截，如果已经登录就继续跳转，如果未登录就拦截跳转。
  *

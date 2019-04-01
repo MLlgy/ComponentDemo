@@ -3,7 +3,8 @@
     package="com.lgy.share">
 
     <application>
-        <activity android:name=".ShareActivity" />
+        <activity android:name=".ShareActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>
